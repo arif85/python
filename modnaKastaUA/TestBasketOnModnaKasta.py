@@ -1,26 +1,28 @@
 import unittest
-from modnaKastaUA.main_page_login import MainPage
-from modnaKastaUA.undo_divo_page import UndoDivoPage
+from modnaKastaUA.mainpagelogin import MainPage
+from modnaKastaUA.undodivopage import UndoDivoPage
 from modnaKastaUA.basetestcase import BaseTestCase
-from modnaKastaUA.jacker_page import JacketPage
+from modnaKastaUA.jackerpage import JacketPage
+from modnaKastaUA.basketpage import BasketPage
 
 class TestBaksetOnModnaKasta(BaseTestCase):
 
     def test_basket_on_modnaKasta(self):
-        main_page = MainPage(self.driver)
-        main_page.clickLoginButton()
-        main_page.input_email('mailfortestingp@ukr.net')
-        main_page.input_password('pythontestqweasd')
-        main_page.clickVHOD()
-        main_page.click_for_men()
-        main_page.click_undo_divo()
-        undo_divo_page = UndoDivoPage(self.driver)
-        undo_divo_page.clickHideSoldButton()
-        undo_divo_page.selectJacket()
+        mainpage = MainPage(self.driver)
+        mainpage.clickLoginButton()
+        mainpage.inputEmail('mailfortestingp@ukr.net')
+        mainpage.inputPassword('pythontestqweasd')
+        mainpage.clickVHOD()
+        mainpage.clickForMen()
+        mainpage.clickUndoDivo()
+        undodivopage = UndoDivoPage(self.driver)
+        undodivopage.clickHideSoldButton()
+        undodivopage.selectJacket()
         jacketpage = JacketPage(self.driver)
         jacketpage.addToBasket()
         jacketpage.navigateToBasket()
-        jacketpage.isJacketAdded()
+        basketpage = BasketPage(self.driver)
+        basketpage.isJacketAdded()
 
 
     if __name__ == "__main__":

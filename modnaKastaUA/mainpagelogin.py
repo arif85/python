@@ -9,13 +9,13 @@ class MainPage(BasePage):
           self.vhod.click()
           print("Vhod clicked")
 
-      def input_email(self, email):
+      def inputEmail(self, email):
           self.email = self.driver.find_element_by_id('username')
           self.email.clear()
           self.email.send_keys(email)
           print("Email inputed")
 
-      def input_password(self, password):
+      def inputPassword(self, password):
           self.password = self.driver.find_element_by_xpath(".//form[@class='popup__left-form']//input[@id='password']")
           self.password.clear()
           self.password.send_keys(password)
@@ -29,13 +29,13 @@ class MainPage(BasePage):
 
 
 
-      def click_for_men(self):
-          self.click_for_men = self.driver.find_element_by_xpath(".//a[@href='/f/male/']")
-          self.click_for_men.click()
+      def clickForMen(self):
+          self.clickForMen = self.driver.find_element_by_xpath(".//a[@href='/f/male/']")
+          self.clickForMen.click()
           print("For Men clicked")
 
 
-      def click_undo_divo(self):
+      def clickUndoDivo(self):
            self.undo_divo = self.driver.find_element_by_xpath(".//a[@href='/campaign/s-30633-undo-diva/f/male/']")
            self.undo_divo.click()
            print("Undo, Divo clicked")
